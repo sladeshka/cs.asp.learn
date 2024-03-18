@@ -1,0 +1,12 @@
+﻿@page "{handler?}"
+@model ProductModel
+@{
+	<h3>@Model.Message</h3>
+	<form method="post">
+		<label>Название товара: <input type="text" name="name" value="@Model.Product?.Name"></label><br />
+		<label>Цена<input type="number" name="price" value="@Model.Product?.Price"></label><br />
+		<input type="submit" asp-page-handler="WithPoints" value="Получить баллы"><br />
+		<label>Введите свою скидку %: <input type="number" name="discount" value="@Model.Product?.Discount"></label><br />
+		<input type="submit" asp-page-handler="WithDiscount" value="Получить скидку"><br />
+	</form>
+}
