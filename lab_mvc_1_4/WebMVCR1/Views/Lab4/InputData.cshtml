@@ -1,0 +1,18 @@
+﻿@model WebMVCR1.Models.Person
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Enter your @Html.DisplayName("FirstName"):</td>
+            <td>@Html.TextBox("FirstName")</td>
+        </tr>
+        <tr>
+            <td><p>Enter your @Html.DisplayName("LastName") @Html.DisplayNameFor(model => model.LastName):</p></td>
+            <td>@Html.TextBoxFor(x => x.LastName)</td> 
+        </tr>
+        <tr>
+            <td><input type="submit" value="Send" /> </td>
+            <td></td>
+        </tr>
+    </table>
+}
